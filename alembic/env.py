@@ -10,7 +10,7 @@ import sys
 import os
 
 from app.core.database import Base  # adjust if needed
-from app.models import Policy, Comment
+from app.models import *
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
