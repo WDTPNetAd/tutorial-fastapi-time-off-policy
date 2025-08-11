@@ -7,4 +7,4 @@ pip:
 	$(docker_compose_exec) pip $(PIP_CMD)
 
 runserver:
-	docker exec -it omni-fastapi-time-off-policy-web-1 uvicorn main:app --host 0.0.0.0 --port 9002 --reload
+	docker exec -it omni-fastapi-time-off-policy-web-1 uvicorn app.main:app --host 0.0.0.0 --port 9002 --reload

@@ -18,6 +18,9 @@ def get_time_off_requests(
     start_date: Annotated[date | None, Query()] = None,
     end_date: Annotated[date | None, Query()] = None,
 ):
+    # if start_date and end_date is present, end_date should be greater than start_date
+    if start_date and end_date and end_date < start_date:
+        raise BadRequestException("End date should be greater than start date")
     query = db.query(models.TimeOffRequest)
 
     if start_date:
